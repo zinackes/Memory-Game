@@ -1,0 +1,338 @@
+header {
+    max-height: 70px;
+    background: var(--Header);
+    margin-bottom: 50px;
+}
+section aside{
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: flex-start;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+section aside div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+section aside p{
+    color: var(--TextColor);
+}
+
+.dif{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+select{
+    border: none;
+    border-radius: 7px;
+    padding: 1rem 4rem 1rem 1rem;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.7);
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    cursor: pointer;
+    color: var(--TextColor);
+    -webkit-appearance: none; /* Safari et Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Standard */
+
+}
+select::-ms-expand{
+    display: none;
+}
+select:focus {
+    outline: none;
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+section h1{
+    color: var(--TextColor);
+    font-size: 40px;
+    text-align: center;
+}
+
+section table tr{
+    color: var(--TextColor);
+}
+
+section table tr td{
+    background: var(--BoxBg);
+    width: 100px;
+    height: 100px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+section img{
+    max-width: 98px;
+}
+
+.Eight td{
+    width: 60px;
+    height: 60px;
+}
+
+.Eight img{
+    max-width: 58px;
+}
+
+.Twelve td{
+    width: 40px;
+    height: 40px;
+}
+
+.Twelve img{
+    max-width: 38px;
+}
+
+section .card_inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+section .card_front, section .card_back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+section .card_back{
+    transform: rotateY(180deg);
+}
+
+.revealed .card_inner{
+    transform: rotateY(180deg);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.info p{
+    color: #9ea1a2;
+}
+
+.info p span{
+    color: var(--TextImportant);
+}
+
+.hide{
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.popup{
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 350px;
+    background: var(--PopupBg);
+    z-index: 9999;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.popup button:hover a{
+    color: var(--TextColor);
+}
+
+.popup h3, .popup p, .popup h4{
+    color: var(--TextColor);
+}
+
+.popup h3{
+    font-size: 25px;
+}
+
+.popup h4{
+    font-size: 22px;
+}
+
+.popup h4{
+    margin-top: 10px;
+}
+
+.popup div:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.progressbar_inner span:nth-child(1), .progressbar_inner p, .progressbar_number p{
+    color: var(--TextColor);
+}
+
+.popup .progressbar_inner{
+    max-width: 97%;
+}
+
+.popup .progressbar_inner span:nth-child(2){
+    color: var(--MessageColor) !important;
+}
+
+
+.popup .progressbar_inner span:nth-child(3){
+    color: var(--ProgressBarTextTransp);
+}
+
+.popup .progressbar{
+    width: 300px !important;
+    height: 40px !important;
+}
+
+.popup .progressbar_number p{
+    padding: 4px 8px !important;
+    margin: 4px 4px !important;
+}
+
+.popup .progressbar_number p{
+    font-size: 13px !important;
+}
+
+.popup .deux{
+    margin-left: 88% !important;
+}
+
+.popup .progressbar_inner_second{
+    position: absolute;
+    z-index: -1;
+    background: var(--ProgressBarBgSecondTransparent) !important;
+}
+
+.popup button{
+    border: 2px solid transparent;
+    background: var(--BorderColor);
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--TextColorDark);
+}
+
+.popup button a{
+    color: var(--TextColorDark);
+}
+
+.popup button:hover{
+    color: var(--TextColorDark);
+}
+
+.launchGame{
+    background: green;
+    border: none;
+    outline: none;
+    font-family: Sora;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 950px){
+    section{
+        margin: 0;
+        margin-bottom: 50px;
+    }
+    h1{
+        font-size: 30px !important;
+    }
+    section table tr td{
+        width: 80px;
+        height: 80px;
+    }section img{
+         max-width: 78px;
+     }
+    aside{
+        padding: 30px;
+    }
+    .info p{
+        font-size: 14px;
+    }
+    aside p{
+        font-size: 14px;
+    }
+    aside select{
+        font-size: 12px;
+    }
+    .dif{
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 720px){
+    h1{
+        font-size: 20px !important;
+    }
+    aside{
+        padding: 25px;
+    }
+    .info p{
+        font-size: 12px;
+    }
+    aside p{
+        font-size: 12px;
+    }
+    aside select{
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 510px){
+    h1{
+        font-size: 15px !important;
+    }
+    aside{
+        padding: 20px;
+    }
+    .info p{
+        font-size: 11px;
+    }
+    aside p{
+        font-size: 11px;
+    }
+    aside select{
+        font-size: 10px;
+    }
+    section table tr td{
+        width: 60px;
+        height: 60px;
+    }section img{
+         max-width: 58px;
+     }
+}

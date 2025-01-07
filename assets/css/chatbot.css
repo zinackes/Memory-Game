@@ -1,0 +1,191 @@
+
+
+.chatbot{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 99999;
+}
+
+.relative{
+    position: relative;
+}
+
+.chatbot .icon{
+    background: var(--IconRobotBg);
+    padding: 13px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    border: 2px solid var(--IconRobotBg);
+}
+
+.icon img{
+    max-width: 30px;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(5461%) hue-rotate(337deg) brightness(132%) contrast(100%);
+}
+
+.labelBot:hover .icon{
+    border-color: var(--TextImportant);
+}
+
+.labelBot:hover img{
+    filter: brightness(0) saturate(100%) invert(71%) sepia(64%) saturate(350%) hue-rotate(356deg) brightness(89%) contrast(86%);
+}
+
+.chatbot .chat{
+    transition: all .6s ease;
+    position: absolute;
+    top: -400px;
+    right: 0;
+    width: 275px;
+    height: 400px;
+    background: var(--TextColor);
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.chatbot .chat .message{
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.chat .top{
+    background: var(--MessageColor);
+    height: 13%;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5px;
+}
+
+.top div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+.chat .top img{
+    margin-left: 10px;
+}
+.chat .top p{
+    color: var(--TextColor);
+    font-size: 15px;
+}
+
+.top .fa-xmark{
+    margin-right: 10px;
+}
+
+.chat .textzone{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+    overflow: hidden;
+    overflow-y: scroll;
+    width: 98%;
+    gap: 10px;
+}
+
+.textzone .messagebox{
+    display: flex;
+    gap: 6px;
+}
+
+.textzone .moi{
+    justify-content: flex-end;
+}
+
+.textzone .moi aside{
+    display: none;
+}
+
+.textzone .moi div{
+    width: 45%;
+}
+
+.textzone .moi .text{
+    max-width: 100%;
+}
+
+.textzone .moi .text{
+    background: var(--MessageColor);
+}
+
+
+.messagebox aside img, .chat .top img{
+    max-width: 60px;
+    padding: 5px;
+}
+
+.textzone .messagebox div{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.messagebox .author, .messagebox .date{
+    font-size: 10px;
+}
+
+.messagebox .text{
+    background: var(--RobotBg);
+    padding: 5px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+
+.chat .message{
+    display: flex;
+}
+
+.chat .message input::placeholder{
+    color: var(--PlaceholderColor);
+}
+
+.chat .message input{
+    border: 1px solid var(--PlaceholderColor);
+    border-radius: 4px;
+    font-family: Sora;
+    padding: 7px;
+}
+
+.chat .message button{
+    font-family: Sora;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+.chatbot label{
+    cursor: pointer;
+}
+
+#bot{
+    display: none;
+}
+
+#bot:checked ~ .chat{
+    opacity: 1;
+    visibility: visible;
+}
+
+#bot:checked ~ .labelBot{
+    display: none;
+}
+
+.lechat img{
+    max-width: 200px;
+    border-radius: 10px;
+}

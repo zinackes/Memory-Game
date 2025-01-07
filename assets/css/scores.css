@@ -1,0 +1,218 @@
+header{
+    max-height: 70px;
+    background: var(--Header);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+section h1{
+    color: var(--TextColor);
+    font-size: 40px;;
+}
+
+.scores{
+    width: 100%;
+}
+
+.scores section{
+    margin: 70px 0;
+}
+
+.col{
+    background: var(--BoxBg);
+    border-radius: 10px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.highlight{
+    background: var(--Highlight);
+}
+
+td a{
+    cursor: pointer;
+    color: var(--TextColor);
+}
+
+td a:hover{
+    color: var(--BorderColor);
+}
+
+.search{
+    background: var(--BoxBg);
+    border-radius: 50px;
+    padding: 10px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    width: 80%;
+}
+
+.search_bar{
+    background: var(--Header);
+    border-radius: 50px;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.search_bar input{
+    background: transparent;
+    border-radius: 15px;
+    height: 100%;
+    border: none;
+    width: 97%;
+    color: var(--TextColor);
+    padding: 7.5px 15px;
+}
+
+.search_bar .input::placeholder{
+    color: var(--TextColor);
+}
+
+.search_bar input:focus-within{
+    outline: 0;
+}
+
+.search_bar .submit{
+    cursor: pointer;
+    background: transparent;
+    max-width: 30%;
+    background: var(--SmallSepBg);
+}
+
+.search_bar .submit:hover{
+    background: var(--PurpleHover);
+}
+
+.search_bar:focus-within{
+    background: var(--PurpleHover);
+}
+
+
+section table{
+    background: var(--BoxBg);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+table tr{
+    display: flex;
+    gap: 15px;
+    position: relative;
+    align-items: center;
+}
+
+table th, table td{
+    width: 130px;
+    text-align: center;
+}
+
+table thead tr, tbody tr{
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+table thead tr:after, tbody tr:after{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    background: var(--SmallSepBg);
+    height: 2px;
+    border-radius: 2px;
+}
+
+section table{
+    color: var(--TextColor);
+}
+
+.col_title{
+    display: flex;
+    gap: 30px;
+}
+
+.col_desc{
+    display: flex;
+}
+
+.col h2{
+    color: var(--PlaceholderColor);
+    letter-spacing: 1.2px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.col .separator{
+    width: 115%;
+    margin: 5px 0 0 0;
+}
+
+.col .small_separator{
+    width: 100%;
+    margin: 0;
+    background: var(--Header);
+}
+
+.col p{
+    color: var(--TextDescColor);
+}
+
+.row{
+    position: absolute;
+    left: -5%;
+    background: #c1554d;
+    height: 42px;
+    width: 110%;
+    z-index: -99;
+    border-radius: 10px;
+}
+
+.bg_row2{
+    background: var(--BgButton);
+}
+
+@media screen and (max-width: 940px){
+    .search{
+        width: 70%;
+    }
+    table th, table td{
+         width: 100px;
+         text-align: center;
+        font-size: 14px;
+     }
+}
+
+@media screen and (max-width: 750px){
+    table th, table td{
+        width: 80px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+
+}
+
+@media screen and (max-width: 450px){
+    table th, table td{
+        width: 50px;
+        text-align: center;
+        font-size: 10.5px;
+    }
+    table thead th{
+        font-size: 10px;
+    }
+
+
+}

@@ -1,0 +1,113 @@
+h1{
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    width: 100%;
+}
+form{
+    margin-top: auto;
+    margin-bottom: auto;
+    background: var(--IconRobotBg);
+    padding: 90px 50px !important;
+    border-radius: 10px;
+    box-shadow: 0 0 35px var(--DropShadow);
+}
+
+.formulaire{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.formulaire input, .formulaire button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    color: var(--TextColor);
+    font-size: 17px
+}
+
+input:focus-visible{
+    outline: none;
+}
+
+.form_section{
+    display: flex;
+    justify-content: center;
+}
+
+.showPasswd {
+    height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+
+    button.Connexion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4%;
+    align-items: center;
+    }
+
+    input::placeholder {
+        color: var(--TextColor);
+    }
+
+    div.copyright {
+        font-size: 5%;
+        bottom: 0;
+        margin-top: auto;
+    }
+
+    h1 {
+        width: 100%;
+        font-size: 25px;
+        margin: 10px 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        text-align: center; /* Centrer le texte */
+    }
+
+    p {
+        font-size: 16px; /* Augmente la taille du texte pour une meilleure lisibilité */
+        margin: 10px 0; /* Espace autour des paragraphes */
+        line-height: 1.5; /* Améliore l'espacement des lignes */
+    }
+}
+
+    .formulaire button {
+        background: transparent;
+        border: 3px solid var(--BorderColor);
+        cursor: pointer;
+        padding: 10px 5px 10px 5px;
+        margin-top: 5px;
+    }
+
+    .formulaire button:hover {
+        background-color: var(--HoverColor);
+        padding: 10px 5px 10px 5px;
+        border-radius: 20px;
+    }
+
+    .formulaire input {
+        background: transparent;
+        color: var(--TextColor);
+        position: relative;
+        border-bottom: 2px solid var(--BorderColor);
+        font-size: 17px;
+        border-radius: 2px;
+    }
+
+    .formulaire input::placeholder {
+        color: var(--TextColor);
+    }
+
+    header ul li a:hover:before {
+        opacity: 1;
+    }
+

@@ -1,0 +1,80 @@
+:root{
+    --underline-offset-y: -2px;
+    --underline-intrinsic-width: 20;
+    --underline-cap-width: 8px;
+    --underline-width: 11;
+
+    --delayCol: 0.2s;
+    --n: 53;
+    }
+
+.dark_theme{
+    --TextDescColor: var(--RobotBg);
+    --PlaceholderColor: var(--RobotBg);
+    --RobotBg: #9ea1a2;
+    --TextColor: #ffffff;
+    --TextColorDark: #1b1a1d;
+    --Highlight: #2e1d49;
+    --PurpleHover: #6a1470;
+    --HoverColor: var(--TextImportant);
+    --BorderColor: var(--TextImportant);
+    --BgButton: var(--TextImportant);
+    --TextImportant: #D4AA5C;
+    --MessageColor: #147efb;
+    --IconRobotBg: var(--SmallSepBg);
+    --SmallSepBg: #622773;
+    --DropShadow: #4A1259;
+    --BoxBg: #4A1259;
+    --Background: #200726;
+    --HeaderTransparent: rgba(32, 7, 38, 0.4);
+    --Footer: var(--BoxShadow2);
+    --BoxShadow2: #560a7a;
+    --Header: var(--BoxShadow);
+    --PopupBg: rgba(86, 10, 122, 0.99);
+    --Header: #4A1259;
+    --BoxShadow: #350C40;
+    --SmallTitleColor: rgba(240, 248, 255, 0.9);
+    --SwitchModeBg: linear-gradient(90deg, #af12f0 0%,
+    #ca77fa 100%);
+
+    --arrow-bg: rgba(255, 255, 255, 0.3);
+    --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+    --option-bg: white;
+    --select-bg: rgba(255, 255, 255, 0.2);
+
+    --ProgressBarBgTransparent: linear-gradient(90deg, rgba(243, 177, 78, 0.3), rgba(255, 206, 81, 0.3));
+    --ProgressBarBgSecondTransparent: linear-gradient(90deg, rgba(243, 177, 78, 0.6), rgba(255, 206, 81, 0.6));
+    --ProgressBarBg: linear-gradient(90deg, #FFCE51, #F3B14E);
+    --ProgressBarBgVertical: linear-gradient(180deg, #F3B14E, #FFCE51);
+    --ProgressBarTextTransp: rgba(255, 255, 255, 0.7);
+
+    --BgUrl: url("../../assets/images/Background.jpg");
+}
+
+.white_theme{
+    --TextDescColor: var(--RobotBg);
+    --PlaceholderColor: var(--RobotBg);
+    --RobotBg: #242527;
+    --TextColor: #1b1a1d;
+    --TextColorDark: #1b1a1d;
+    --HoverColor: var(--TextImportant);
+    --BorderColor: var(--TextImportant);
+    --BgButton: var(--TextImportant);
+    --TextImportant: #fbb4ef;
+    --MessageColor: #fbb4ef;
+    --IconRobotBg: var(--DropShadow);
+    --SmallSepBg: var(--DropShadow);
+    --DropShadow: #fbb4ef;
+    --BoxBg: #fbb4ef;
+    --Background: #ffffff;
+    --HeaderTransparent: rgba(3, 17, 57, 0.2);
+    --Header: var(--BoxShadow2);
+    --BoxShadow2: #fbb4ef;
+    --Footer: var(--BoxShadow);
+    --BoxShadow: #bdb6b6;
+    --SmallTitleColor: rgba(27, 26, 29, 0.9);
+    --SwitchModeBg: linear-gradient(90deg, #c4edf8 0%,
+    #ead5ee 100%);
+
+    --BgUrl: url("../../assets/images/WhiteBg.jpeg");
+}

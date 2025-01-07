@@ -1,0 +1,258 @@
+STORY 4
+
+UPDATE utilisateur
+SET mot_de_passe = REPLACE(mot_de_passe, 'ancien mot_de_passe', 'nouveau_mot_de_passe')
+WHERE email = email donné par l'utilisateur; 
+
+UPDATE utilisateur
+SET email = REPLACE(email, 'ancien email', 'nouvelle email')
+WHERE pseudo = pseudo de l'utilisateur AND mot_de_passe = mot_de_passe donné par l'utilisateur;
+
+
+STORY 5
+
+SELECT * FROM utilisateur
+CASE
+WHEN email donné par l'utilisateur = email AND mot_de_passe donné par l'utilisateur = mot_de_passe THEN connexion acceptée
+ELSE connexion refusé
+
+
+STORY 6
+
+INSERT INTO jeu (nom)
+VALUES('The Power of Memory');
+
+Story 7
+
+SELECT utilisateur.identifiant, jeu.nom, difficulte, score FROM score
+JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+JOIN jeu ON score.id_jeu = jeu.identifiant
+ORDER BY jeu.nom, difficulte DESC, score DESC;
+
+STORY 8
+
+
+pour filtrer on ajoute un WHERE :
+SELECT utilisateur.identifiant, jeu.nom, difficulte, score FROM score
+JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+JOIN jeu ON score.id_jeu = jeu.identifiant
+WHERE difficulte = 2 (exemple)
+ORDER BY jeu.nom, difficulte DESC, score DESC;
+
+STORY 9
+
+Rajouter condition
+
+INSERT INTO score (id_joueur, id_jeu, difficulte, score, date_temps_partie )
+VALUES ('1', '1', '1', '10', '2020-01-10 00:00:45');
+
+STORY 10
+
+INSERT INTO (id_jeu,id_exp,message)
+VALUES(1,2,'Bravo Tango test')
+
+STORY 11
+
+SELECT
+message,
+utilisateur.pseudo,
+message.date_temps_mess,
+(message.id_exp = 1) AS "isSender"
+FROM message
+JOIN utilisateur ON message.id_exp = utilisateur.identifiant
+WHERE message.date_temps_mess >= NOW() - INTERVAL 1 DAY
+ORDER BY message.date_temps_mess ASC;
+
+STORY 12
+
+SELECT* FROM score
+JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+JOIN jeu ON score.id_jeu = jeu.identifiant
+WHERE utilisateur.pseudo LIKE ('%2%')
+ORDER BY jeu.nom, difficulte DESC, score DESC;
+
+STORY 14
+
+INSERT INTO `message_prive` (`id_1`, `id_2`, `contenu`, `lu`, `date_temps_envoie`, `date_temps_lecture`) VALUES
+(1, 2, 'Salut, comment ça va ?', 1, '2024-10-01 08:15:00', '2024-10-01 08:16:00'),
+(2, 1, 'Bien, et toi ?', 1, '2024-10-01 08:17:00', '2024-10-01 08:18:00'),
+(3, 4, 'Bonjour, tu es dispo pour un projet ?', 1, '2024-10-02 09:00:00', '2024-10-02 09:01:00'),
+(4, 3, 'Oui, dis-moi en plus.', 0, '2024-10-02 09:05:00', NULL),
+(1, 2, 'On se retrouve à quelle heure ?', 1, '2024-10-03 10:20:00', '2024-10-03 10:25:00'),
+(3, 1, '13h00 ça te va ?', 1, '2024-10-03 10:30:00', '2024-10-03 10:35:00'),
+(2, 4, 'As-tu reçu les documents ?', 1, '2024-10-04 11:00:00', '2024-10-04 11:05:00'),
+(1, 2, 'Oui, tout est bon.', 1, '2024-10-04 11:10:00', '2024-10-04 11:12:00'),
+(2, 3, 'Tu es là ce soir ?', 0, '2024-10-05 18:15:00', NULL),
+(3, 4, 'Oui, vers 19h.', 0, '2024-10-05 18:20:00', NULL),
+(3, 1, 'Merci pour ton aide hier !', 1, '2024-10-06 14:30:00', '2024-10-06 14:32:00'),
+(4, 3, 'Avec plaisir !', 1, '2024-10-06 14:35:00', '2024-10-06 14:36:00'),
+(4, 1, 'Penses-tu que le projet est réalisable ?', 1, '2024-10-07 15:00:00', '2024-10-07 15:02:00'),
+(2, 4, 'Oui, mais ça demande du travail.', 0, '2024-10-07 15:05:00', NULL),
+(3, 2, 'Tu peux me rappeler demain ?', 1, '2024-10-08 09:10:00', '2024-10-08 09:12:00'),
+(1, 2, 'Bien sûr, à quelle heure ?', 1, '2024-10-08 09:15:00', '2024-10-08 09:17:00'),
+(4, 1, 'Salut, toujours partant pour samedi ?', 1, '2024-10-09 13:25:00', '2024-10-09 13:30:00'),
+(3, 2, 'Oui, on se tient au courant.', 1, '2024-10-09 13:35:00', '2024-10-09 13:37:00'),
+(1, 3, 'Tu as reçu le mail ?', 1, '2024-10-10 08:45:00', '2024-10-10 08:47:00'),
+(3, 1, 'Oui, merci.', 1, '2024-10-10 08:50:00', '2024-10-10 08:52:00');
+
+
+
+INSERT INTO `message_prive` (`id_1`, `id_2`, `contenu`, `lu`, `date_temps_envoie`, `date_temps_lecture`)
+VALUES (2, 3, 'Nouveau message ici', 0, '2024-10-15 12:00:00', NULL);
+
+
+
+DELETE FROM `message_prive` WHERE `id` = 1; 
+
+UPDATE `message_prive`
+SET `contenu` = 'Contenu mis à jour', `lu` = 1, `date_temps_lecture` = NOW()
+WHERE `id` = 6;
+
+
+STORY 15: 
+
+SELECT u1.pseudo AS `Expediteur`, u2.pseudo AS `Receveur`,date_temps_envoie, date_temps_lecture, lu,contenu FROM message_prive
+JOIN utilisateur u1 ON u1.identifiant = message_prive.id_1
+JOIN utilisateur u2 ON u2.identifiant = message_prive.id_2
+WHERE id_1 = 3
+ORDER BY date_temps_envoie DESC
+LIMIT 1;
+
+STORY 16: 
+
+SELECT 
+    u1.pseudo AS `Expediteur`,
+    u2.pseudo AS `Receveur`,
+    mp.date_temps_envoie,
+    mp.date_temps_lecture,
+    mp.lu,
+    mp.contenu,
+    
+       (SELECT COUNT(*) FROM score s1 WHERE s1.id_joueur = u1.identifiant) AS `Partie joué expediteur`,
+    
+    (SELECT COUNT(*) FROM score s2 WHERE s2.id_joueur = u2.identifiant) AS `Partie joué receveur`,
+   
+   
+    (SELECT j.nom 
+     FROM score s1 
+     JOIN jeu j ON j.identifiant = s1.id_jeu 
+     WHERE s1.id_joueur = u1.identifiant 
+     GROUP BY s1.id_jeu 
+     ORDER BY COUNT(*) DESC 
+     LIMIT 1) AS `Jeu le plus joué expediteur`,
+     
+    (SELECT j.nom 
+     FROM score s2 
+     JOIN jeu j ON j.identifiant = s2.id_jeu 
+     WHERE s2.id_joueur = u2.identifiant 
+     GROUP BY s2.id_jeu 
+     ORDER BY COUNT(*) DESC 
+     LIMIT 1) AS `Jeu le plus joué receveur`
+
+FROM 
+    message_prive mp
+    
+JOIN 
+    utilisateur u1 ON u1.identifiant = mp.id_1
+JOIN 
+    utilisateur u2 ON u2.identifiant = mp.id_2
+
+WHERE 
+    u1.identifiant = 3
+ORDER BY 
+    mp.date_temps_envoie ASC
+LIMIT 1;
+
+STORY 17
+
+SELECT 
+    YEAR(score.date_temps_partie) AS annee,
+    MONTH(score.date_temps_partie) AS mois,
+
+
+    (SELECT utilisateur.pseudo 
+     FROM score 
+     JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+     WHERE YEAR(score.date_temps_partie) = 2024 
+       AND MONTH(score.date_temps_partie) = mois
+     ORDER BY score.score DESC 
+     LIMIT 1 OFFSET 0) AS top1,
+
+
+    (SELECT utilisateur.pseudo 
+     FROM score 
+     JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+     WHERE YEAR(score.date_temps_partie) = 2024
+       AND MONTH(score.date_temps_partie) = mois
+     ORDER BY score.score DESC 
+     LIMIT 1 OFFSET 1) AS top2,
+
+
+    (SELECT utilisateur.pseudo 
+     FROM score 
+     JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+     WHERE YEAR(score.date_temps_partie) = 2024 
+       AND MONTH(score.date_temps_partie) = mois
+     ORDER BY score.score DESC 
+     LIMIT 1 OFFSET 2) AS top3,
+
+
+    COUNT(score.identifiant) AS total_parties,
+
+    jeu.nom AS jeu_le_plus_joue
+
+FROM 
+    score
+JOIN 
+    utilisateur ON score.id_joueur = utilisateur.identifiant
+JOIN 
+    jeu ON score.id_jeu = jeu.identifiant
+WHERE 
+    YEAR(score.date_temps_partie) = 2024
+GROUP BY 
+    annee, mois, jeu.nom
+ORDER BY 
+    annee, mois;
+
+STORY 18
+
+SELECT 
+    YEAR(score.date_temps_partie) AS annee,
+    MONTH(score.date_temps_partie) AS mois,
+
+    (SELECT COUNT(score.identifiant)
+     FROM score
+     JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+     WHERE utilisateur.pseudo = 'User1'
+     AND YEAR(score.date_temps_partie) = annee 
+     AND MONTH(score.date_temps_partie) = mois) AS total_partie,
+
+    (SELECT jeu.nom
+     FROM score
+     JOIN jeu ON score.id_jeu = jeu.identifiant
+     WHERE utilisateur.pseudo = 'User1'
+     GROUP BY score.id_jeu
+     ORDER BY score.score DESC 
+     LIMIT 1) AS jeu_le_plus_jouer,
+
+
+    (SELECT AVG(score.score) 
+     FROM score 
+     JOIN utilisateur ON score.id_joueur = utilisateur.identifiant
+     WHERE YEAR(score.date_temps_partie) = annee 
+     AND MONTH(score.date_temps_partie) = mois
+     AND utilisateur.pseudo = 'User1' 
+     LIMIT 1) AS score_moyen
+
+FROM 
+    score
+JOIN 
+    utilisateur ON score.id_joueur = utilisateur.identifiant
+JOIN 
+    jeu ON score.id_jeu = jeu.identifiant
+WHERE 
+    YEAR(score.date_temps_partie) = 2024
+GROUP BY 
+    annee, mois, jeu.nom
+ORDER BY 
+    annee, mois;
